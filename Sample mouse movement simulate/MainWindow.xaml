@@ -1,12 +1,30 @@
-﻿<Window x:Class="Sample_mouse_movement_simulate.MainWindow"
+﻿<Window Name="main"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sample_mouse_movement_simulate"
+        xmlns:WPF="clr-namespace:DotNetBrowser.WPF;assembly=DotNetBrowser" x:Class="Sample_mouse_movement_simulate.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525" MouseMove="main_MouseMove">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="106*"/>
+            <ColumnDefinition Width="126*"/>
+            <ColumnDefinition Width="129*"/>
+            <ColumnDefinition Width="156*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="289*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="pX" Grid.Row="0" Grid.Column="0" Content="X:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="pY" Grid.Row="0" Grid.Column="1" Content="Y:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="positionX" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50"/>
+        <TextBox x:Name="positionY" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50"/>
+        <Button x:Name="moveMS" Grid.Row="0" Grid.Column="2" Content="Move mouse" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="moveMS_Click"/>
+        <Label x:Name="status" Grid.Row="0" Grid.Column="3" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120"/>
+     
+
     </Grid>
 </Window>
